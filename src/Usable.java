@@ -1,9 +1,5 @@
 interface Usable {
-    default void use(){
-        System.out.println("default used");
+    default void use(Dueler target){
+        System.out.println("default used: "+ target.name + this);
     }
-    default void use(Card c){
-        System.out.println("default method that takes Usable?");
-    }
-    void use(Card source, Dueler target);
 }

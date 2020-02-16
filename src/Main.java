@@ -1,23 +1,17 @@
 public class Main {
     public static void main(String[] args) {
 
-        Usable h = new _A_List_Health_Potion();
+        Cardset c = new Cardset();
 
-        Card health = new Card("health",h);
-
-        Card indio = new Card("indio");
+        Card health = new Card("health", c.a_List_Health_Potion);
         Dueler edgar = new Dueler("edgar");
-        Dueler jaime = new Dueler("jaime");
-        DuelerA adam = new DuelerA("adam");
-        DuelerB bob = new DuelerB("bob");
-        DuelerC ciaran = new DuelerC("ciaran");
-        edgar.use(health);
-//        indio.use(edgar);
-//        edgar.use(indio);
-//        jaime.use(edgar);
-//
-//        adam.use(ciaran);
-//        adam.use(health);
+        Dueler indio = new Dueler("indio");
 
+        System.out.println("edgar about to take health \ncurrent health is " + edgar.health);
+        // dueler uses this syntax with a Card
+        edgar.use(health);
+
+        // this syntax is also valid (calling behavior on target)
+        c.plus_Ultra.use(indio);
     }
 }
