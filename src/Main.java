@@ -1,9 +1,11 @@
+import java.util.HashMap;
+
 public class Main {
     public static void main(String[] args) {
 
         Cardset c = new Cardset();
 
-        Card health = new Card("health", c.a_List_Health_Potion);
+        Card health = new Card("health", c.a_list);
         Dueler edgar = new Dueler("edgar");
         Dueler indio = new Dueler("indio");
 
@@ -12,6 +14,6 @@ public class Main {
         edgar.use(health);
 
         // this syntax is also valid (calling behavior on target)
-        c.plus_Ultra.use(indio);
+        c.plus.use(indio);
     }
 }
