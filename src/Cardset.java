@@ -1,6 +1,6 @@
 // working // aside from moving a lot of isaac's code into these methods.
 // thinking we could load one of these as a static in the Usable interface
-
+// (?<!\w)_([\w]*\(\))
 import java.util.HashMap;
 
 /**
@@ -12,9 +12,27 @@ import java.util.HashMap;
  * which can be used in Card constructors.
  */
 public class Cardset implements Usable {
+    HashMap<String, Usable> cardset = new HashMap<String, Usable>();
 
     Cardset() {
         System.out.println("creating cardset");
+        cardset.put("A List Health Potion",a_list);
+        cardset.put("B List Health Potion",b_list );
+        cardset.put("C List Health Potion",c_list );
+        cardset.put("X List Health Potion",x_list );
+        cardset.put("Instant Confrontation",instant );
+        cardset.put("Recover",recover );
+        cardset.put("Plus Ultra",plus );
+        cardset.put("Lucky Draw",lucky );
+        cardset.put("Status Advance",status );
+        cardset.put("Puppy Xylo",p_xylo );
+        cardset.put("Kitten Xin",k_xin );
+        cardset.put("Puppy Claire",p_claire );
+        cardset.put("Kitten Carlos",k_carlos );
+        cardset.put("Puppy Bob",p_bob );
+        cardset.put("Kitten Bea",k_bea);
+        cardset.put("Puppy Ash",p_ash );
+        cardset.put("Kitten Alex",k_alex );
     }
 
     _A_List_Health_Potion a_list = new _A_List_Health_Potion();
@@ -39,6 +57,7 @@ public class Cardset implements Usable {
 
     public class _A_List_Health_Potion implements Usable {
         public void use(Dueler target) {
+            System.out.println("i got called");
             target.heal();
         }
     }
@@ -140,29 +159,10 @@ public class Cardset implements Usable {
     }
 
 
-// i think we've done some iterations of something like this, but this one is not
+    // i think we've done some iterations of something like this, but this one is not
 // working. would contain the stuff needed to make a card i.e. string that we read
 // off the file and instance of the Usables (strategy/method).
 
-//    HashMap<String, Usable> cardset = new HashMap<String, Usable>(16);
-////    HashMap <> cardset = new HashMap <>(16);
-//        cardset.put("A List Health Potion",a_list );
-//        cardset.put("B List Health Potion",b_list );
-//        cardset.put("C List Health Potion",c_list );
-//        cardset.put("X List Health Potion",x_list );
-//        cardset.put("Instant Confrontation",instant );
-//        cardset.put("Recover",recover );
-//        cardset.put("Plus Ultra",plus );
-//        cardset.put("Lucky Draw",lucky );
-//        cardset.put("Status Advance",status );
-//        cardset.put("Puppy Xylo",p_xylo );
-//        cardset.put("Kitten Xin",k_xin );
-//        cardset.put("Puppy Claire",p_clair );
-//        cardset.put("Kitten Carlos",k_carlo );
-//        cardset.put("Puppy Bob",p_bob );
-//        cardset.put("Kitten Bea",k_bea);
-//        cardset.put("Puppy Ash",p_ash );
-//        cardset.put("Kitten Alex",k_alex );
 
 }
 
